@@ -17,10 +17,10 @@ class Grapher extends GrapherHook
     protected $hasTinyPreviews = true;
     protected $graphiteConfig;
     protected $baseUrl = 'http://graphite.com/render/?';
-    protected $serviceMacro = 'icinga2.$host.name$.services.$service.name$.$service.check_command$.perfdata.$metric$.value';
+    protected $serviceMacro = 'icinga2.$host.name$.services.$service.name$.$service.check_command$.perfdata.$metric$';
     protected $hostMacro = 'icinga2.$host.name$.host.$host.check_command$.perfdata.$metric$.value';
-    protected $imageUrlMacro = '&target=$target$&source=0&width=300&height=120&hideAxes=true&lineWidth=2&hideLegend=true&colorList=049BAF';
-    protected $largeImageUrlMacro = '&target=$target$&source=0&width=800&height=700&colorList=049BAF&lineMode=connected';
+    protected $imageUrlMacro = '&target=$target$.value&source=0&width=300&height=120&hideAxes=true&lineWidth=1&hideLegend=true&colorList=049BAF&lineMode=connected';
+    protected $largeImageUrlMacro = '&target=alias(color($target$.warn,'yellow'),'warning')&target=alias(color($target$.crit,'red'),'critical')&target=$target$.value&source=0&width=800&height=700&colorList=049BAF&lineMode=connected'
     protected $legacyMode = false;
 
     protected $remoteFetch = false;

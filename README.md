@@ -38,11 +38,11 @@ Macro template for the host name
 
 ``graphite_args_template ``
 Macro template for the small image where $target$ is replaced with the metric name 
-* *&target=$target$&source=0&width=300&height=120&hideAxes=true&lineWidth=2&hideLegend=true&colorList=049BAF*
+* *&target=$target$.value&source=0&width=300&height=120&hideAxes=true&lineWidth=1&hideLegend=true&colorList=049BAF&lineMode=connected*
 
 ``graphite_large_args_template ``
 Macro template for the large image 
-* *&target=$target$&source=0&width=800&height=700&colorList=049BAF&lineMode=connected*
+* *&target=alias(color($target$.warn,'yellow'),'warning')&target=alias(color($target$.crit,'red'),'critical')&target=$target$.value&source=0&width=800&height=700&colorList=049BAF&lineMode=connected*
 
 ``remote_fetch``
 To allow remote fetch of the graph image. Useful in multi-tenant installations and/or with password protected graphite-web installations (http auth).
