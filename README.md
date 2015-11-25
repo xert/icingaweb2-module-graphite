@@ -41,7 +41,7 @@ Macro template for the small image where $target$ is replaced with the metric na
 * *&target=$target$.value&source=0&width=300&height=120&hideAxes=true&lineWidth=1&hideLegend=true&colorList=049BAF&lineMode=connected*
 
 ``graphite_large_args_template ``
-Macro template for the large image 
+Macro template for the large image. You must have ``enable_send_thresholds = true`` in icinga2 graphite.conf for this to work.
 * *&target=alias(color($target$.warn,'yellow'),'warning')&target=alias(color($target$.crit,'red'),'critical')&target=$target$.value&source=0&width=800&height=700&colorList=049BAF&lineMode=connected*
 
 ``remote_fetch``
